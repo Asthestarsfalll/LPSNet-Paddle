@@ -12,45 +12,45 @@ Compared to original code, this implemenation has the following advantages:
 
 3. Expandable.
 
-   ## Start
+## Start
 
-   In order to make you focus on the key points, redundant files have been removed.
+In order to make you focus on the key points, redundant files have been removed.
 
-   LPSNet is defined in `paddleseg/models/lpsnet.py`
+LPSNet is defined in `paddleseg/models/lpsnet.py`
 
-   ### Train
-   
-   Training with a single GPU.
+### Train
 
-   ```bash
-   python train.py --config configs/lpsnet/lpsnet_m_cityscapes_1536x1024_200k.yml  --do_eval --use_vdl --log_iter 100 --save_interval 4000 --save_dir output
-   ```
-   
-   Training with 4 GPUs.
-   
-   ```bash
-   python -m paddle.distributed.launch train.py --config configs/lpsnet/lpsnet_m_cityscapes_1536x1024_200k.yml  --do_eval --use_vdl --log_iter 100 --save_interval 1000 --save_dir output
-   ```
-   
-   ### Evaluate
-   
-   ```
-   python val.py --config configs/lpsnet/lpsnet_m_cityscapes_1536x1024_200k.yml --model_path {your_model_path}
-   ```
-   
-   ### Test TIPC
-   
-   Prepare dataset(very small)
-   
-   ```bash
-   bash test_tipc/prepare.sh ./test_tipc/configs/lpsnet/train_infer_python.txt 'lite_train_lite_infer'
-   ```
-   
-   Test TIPC.
-   
-   ```python
-   bash test_tipc/test_train_inference_python.sh ./test_tipc/configs/lpsnet/train_infer_python.txt 'lite_train_lite_infer'
-   ```
+Training with a single GPU.
+
+```bash
+python train.py --config configs/lpsnet/lpsnet_m_cityscapes_1536x1024_200k.yml  --do_eval --use_vdl --log_iter 100 --save_interval 4000 --save_dir output
+```
+
+Training with 4 GPUs.
+
+```bash
+python -m paddle.distributed.launch train.py --config configs/lpsnet/lpsnet_m_cityscapes_1536x1024_200k.yml  --do_eval --use_vdl --log_iter 100 --save_interval 1000 --save_dir output
+```
+
+### Evaluate
+
+```
+python val.py --config configs/lpsnet/lpsnet_m_cityscapes_1536x1024_200k.yml --model_path {your_model_path}
+```
+
+### Test TIPC
+
+Prepare dataset(very small)
+
+```bash
+bash test_tipc/prepare.sh ./test_tipc/configs/lpsnet/train_infer_python.txt 'lite_train_lite_infer'
+```
+
+Test TIPC.
+
+```python
+bash test_tipc/test_train_inference_python.sh ./test_tipc/configs/lpsnet/train_infer_python.txt 'lite_train_lite_infer'
+```
 
 ## Performance
 
